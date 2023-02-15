@@ -28,7 +28,7 @@ func getUserData(name: String, age:Int) -> Result {
 // Enum Associated Values
 
 enum Book {
-    case classics // has not associated values. It's not mandatory.
+    case classics // you don't have to have associated values for every single cases enum
     case horror (pages: Int)
     case mirror (writers: String)
     case crime (price: Double)
@@ -38,6 +38,38 @@ let book1 = Book.classics
 let book2 = Book.horror(pages: 743)
 let book3 = Book.mirror(writers: "Leo Huer")
 let book4 = Book.crime(price: 45.3) // $
+
+// Intermediate Example!!
+enum Activity {
+    case ps5(gameName: String)
+    case running(place: String)
+    case reading(bookPage: Int)
+}
+
+func doActivity(activity: Activity){
+    
+    switch activity {
+        
+    case .ps5(let gameName) where gameName == "FIFA23":
+        print("Good Luck :)")
+        
+    case .running(let place) where place == "Beach":
+        print("Best place :)")
+        
+    case .reading(let bookPage) where bookPage > 400:
+        print("Seems like it will take a long time.")
+        
+    case .reading, .ps5, .running: // Like a default case
+        print("Nice activity")
+        
+    }
+    
+}
+    
+doActivity(activity: .running(place: "Beach")) // Output: Best place :)
+doActivity(activity: .reading(bookPage: 500)) // Output: Seems like it will take a long time.
+doActivity(activity: .ps5(gameName: "God of War")) // Output: Nice activity
+
 
 
 /* Enum Raw Value
@@ -73,6 +105,40 @@ if let leaderTeam = Team(rawValue: 1){
 if let secondTeam = Team(rawValue: 2) {
     print(secondTeam) // output: ajax
 }
+
+enum SocialMedia {
+    case twitter
+    case facebook
+    case instagram
+    case linkedin
+}
+
+
+func sharePhoto(on platfrom: SocialMedia){
+    switch platfrom {
+    case .twitter:
+        print("Share photo on twitter")
+    case .facebook:
+        print("Share photo on facebook")
+    case .instagram:
+        print("Share photo on instagram")
+    case .linkedin:
+        print("Share photo on linkedin")
+    }
+}
+
+sharePhoto(on: .facebook)
+
+
+
+
+
+
+
+ 
+
+
+
 
 
 
