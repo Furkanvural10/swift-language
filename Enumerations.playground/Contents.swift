@@ -130,6 +130,55 @@ func sharePhoto(on platfrom: SocialMedia){
 sharePhoto(on: .facebook)
 
 
+/* ************** SWITCH STATEMENT **************
+
+Switch provides us with a code that is similar to the if else structure, but more understandable and readable.
+ 
+*/
+
+let weather = "Sunny"
+
+switch weather {
+    
+case "Sunny":
+    print("Don't forget your sunglasses")
+
+case "Snowy":
+    print("Be careful! Don't forget to wear your coat.")
+    
+case "Rainy":
+    print("A colorful umbrella suits you very well.")
+    
+default:
+    print("Weather seems uncertain.")
+    // default: is required because Swift makes sure you cover all possible cases so that no eventuality is missed off.
+}
+
+// If you want execution to continue on to the next case, use the "fallthrough" keyword
+
+enum CarBrand {
+    case mercedes
+    case fiat
+    case bmw
+}
+
+let car1: CarBrand = .bmw
+
+switch car1 {
+case .bmw:
+    print("Your car is awesome!!")
+    fallthrough
+    
+case .fiat:
+    // This case always run, becauseyou used "falltrough" in the example above.
+    print("Your car is cheapter than others")
+    
+case .mercedes:
+    print("Your car is very stylish.")
+
+}
+
+
 
 
 
