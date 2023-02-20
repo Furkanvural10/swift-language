@@ -72,3 +72,53 @@ var team2 = Teams()
 // Check the logs :)
 
 
+class Books {
+    
+    // Properties
+    var name: String
+    var price: Int // $
+    var writer: String
+    var completed: Bool
+    
+    // When creating an object from the class, I want to give the value of the variables. This is how we do it.
+    init(name: String, price: Int, writer: String, completed: Bool) {
+        // self refer to properties
+        self.name = name
+        self.price = price
+        self.writer = writer
+        self.completed = completed
+    }
+}
+
+
+var book1 = Books(name: "100 Days", price: 12, writer: "Joe Luret", completed: false)
+
+
+// Class with enum feature
+
+enum Platform {
+    case instagram
+    case twitter
+    case linkedin
+    case youtube
+}
+
+class SocialMedia {
+    
+    var accountName: String
+    var following: Int
+    var followers: Int
+    var platform: Platform
+    
+    init(accountName: String, following: Int, followers: Int, platform: Platform) {
+        self.accountName = accountName
+        self.following = following
+        self.followers = followers
+        self.platform = platform
+    }
+    
+}
+
+var userAccount = SocialMedia(accountName: "iosDev", following: 100, followers: 4953, platform: .instagram)
+
+
