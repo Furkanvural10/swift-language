@@ -42,3 +42,33 @@ myCar.buyCard()
 myCar.addConfiguration()
 
 
+
+// ******* Initialization *******
+
+class Teams {
+    
+    
+    var teamName: String = "Real Madrid"
+    var playerName: String = "Kross"
+    var jerseyNumber: Int = 8
+     
+    // Initializer or Constructor
+    init() {
+        // It is called a special function where we specify what to do when the class is created.
+        // When an object of this class is created, it will run first.
+        print("An object has been created from the Teams class.")
+        
+    }
+    
+}
+
+var team1 = Teams()
+print(team1.teamName)
+// What you will see when you look at the logs:
+// 1- An object has been created from the Teams class.
+// 2- Real Madrid
+
+var team2 = Teams()
+// Check the logs :)
+
+
