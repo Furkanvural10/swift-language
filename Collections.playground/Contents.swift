@@ -139,3 +139,24 @@ print(failNoteList)
 let gradeBbNotes = studentNoteList.filter({ $0>79 && $0<90})
 print(gradeBbNotes)
 
+
+// ******** DICTIONARY FILTER FEATURE **********
+
+var classNote : [String:Int] = [
+    "John" : 47,
+    "Brown" : 34,
+    "Melissa" : 57,
+    "Jeremy" : 54,
+    "Philip" : 90,
+    "Adam" : 100,
+    "Billy" : 65,
+]
+
+var passedStudents = classNote.filter({$0.value > 50})
+// passedStudents -> ["Jeremy": 54, "Lara": 100, "Philip": 90, "Melissa": 57]
+
+var startWithBLetter = classNote.filter({$0.key.starts(with: "B") })
+// startWithBLetter -> ["Billy": 65, "Brown": 34]
+
+var moreConditionList = classNote.filter({$0.key.starts(with: "B") && $0.value>50 })
+// ["Billy": 65]
