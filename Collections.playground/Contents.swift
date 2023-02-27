@@ -118,3 +118,24 @@ let teamScores = Dictionary<String, Int>()
 userAgeList.isEmpty
 uniqueColorList.isEmpty
 teamScores.isEmpty
+
+
+/* ******** ARRAY FILTER FEATURE **********
+ 
+ $0 -> Refer to all items in the list
+ Result return as a list.
+ 
+ */
+
+
+var studentNoteList = [67,97,54,76,75,46,89,34,68,65,45]
+
+let passNoteList = studentNoteList.filter({ $0>=50 })
+print(passNoteList)
+let failNoteList = studentNoteList.filter({ $0<50 })
+print(failNoteList)
+
+// Filter with More Condition
+let gradeBbNotes = studentNoteList.filter({ $0>79 && $0<90})
+print(gradeBbNotes)
+
