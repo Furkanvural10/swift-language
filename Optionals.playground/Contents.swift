@@ -38,7 +38,7 @@ userName?.uppercased() // output: nill
 */
 
 var userSurname: String?
-userSurname!.uppercased()
+// userSurname!.uppercased()
 
 // What should we do to avoid such dilemmas??? --> default value, if let
 
@@ -47,7 +47,8 @@ userSurname!.uppercased()
 
 // Default Value
 var age = "5"
-var userAge = (Int(age) ?? <#default value#>) * 10
+// var userAge = (Int(age) ?? <#default value#>) * 10
+var userAge = (Int(age) ?? 3) * 10
 // Default Value says that If I can't convert it to int, tell me a value and I'll multiply it by it.
 
 var age1 = "kamds23"
@@ -66,6 +67,33 @@ if let bookName = bestBook {
     print("Wrong input")
     // Show the user error message
 }
+
+
+/* ********* Guard Let *********
+ 
+ We can think of it as the opposite of if let. We deal with "Guard" mostly in negative situations.
+ 
+*/
+
+var userEmail = "xyz@gmail.com"
+
+func getUserInfo(userEmail: String?){
+    
+    guard let mail = userEmail else {
+        // If the variable is nil this will work.
+        print("userEmail is nil, nothing happen")
+        return
+    }
+    
+    // Unwapping because userEmail is not nil.
+    print("Welcome: \(mail)")
+    
+}
+
+getUserInfo(userEmail: nil)
+getUserInfo(userEmail: "xyz@gmail.com")
+
+
 
 
 
