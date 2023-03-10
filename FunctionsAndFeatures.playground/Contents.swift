@@ -58,6 +58,28 @@ let userName = returnUserName(name: "Beck")
 
 
 
+// Argument Label and Call Site
+
+func getUser(name userName: String){
+//   userName--> ArgumentLabel
+
+    print("Username is: \(userName)")
+}
+
+getUser(name: "Jony")
+//   name --> Call site
+
+// Omitting parameter labels. We are using the underscore (_)
+
+func sumTwoNumber(_ firstNumber:Int, _ secondNumber: Int) -> Int{
+    return firstNumber+secondNumber
+}
+
+// sumTwoNumber(<#T##firstNumber: Int##Int#>, <#T##secondNumber: Int##Int#>)
+sumTwoNumber(10, 20)
+
+
+
 
 
 
