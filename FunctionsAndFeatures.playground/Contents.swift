@@ -114,6 +114,37 @@ print(result)
 
 
 
+// ****** Throwing functions ******
+// We are using "throws" keyword
+// If the function thwors the error, we must do that in "do try catch"
+
+enum LoginError: Error {
+    case passwordSimple
+    case nameError
+}
+
+func checkLoginInfo(_ name: String, _ password: String) throws -> Bool {
+    
+    if  password == "123456" {
+        throw LoginError.passwordSimple
+    }
+    
+    return true
+}
+
+do {
+    let result = try checkLoginInfo("John", "123456")
+} catch{
+    print("We catch the error!!!")
+}
+
+
+
+
+
+
+
+
 
 
 
