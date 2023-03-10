@@ -79,6 +79,45 @@ func sumTwoNumber(_ firstNumber:Int, _ secondNumber: Int) -> Int{
 sumTwoNumber(10, 20)
 
 
+// Default Parameters
+func checkEnterance(name: String, age: Int, available: Bool = false ){
+    // available is assigning a default parameter as a false.
+    
+    if available {
+        print("Welcome \(name)")
+    }else{
+        print("Error")
+    }
+    
+}
+
+checkEnterance(name: "Petrick", age: 21, available: true) // output: Welcome Petrick
+checkEnterance(name: "Lucas", age: 29) // output: Error
+
+
+/* Variadic Functions
+ writing ... after type
+*/
+
+func giveUsToArray(number: Int...) -> [Int] {
+    
+    var newArray = [Int]()
+    for i in number {
+        newArray.append(i)
+    }
+    return newArray
+}
+
+var result = giveUsToArray(number: 1,2,3,4,5,6,7,8,9,10)
+print(result)
+// output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+
+
+
+
+
 
 
 
