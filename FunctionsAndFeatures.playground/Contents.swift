@@ -138,7 +138,23 @@ do {
     print("We catch the error!!!")
 }
 
+/* ****** Inout parameters *******
+ 
+ All parameters in the functions are constant. You can not change them.
+ If you want to change you can use the inout parameters
+ 
+ */
 
+func findFactoriel(number: inout Int) -> Int {
+    
+    for i in 1..<number{
+        number *= i
+    }
+    return number
+}
+
+var number = 5
+findFactoriel(number: &number) // output: 120
 
 
 
