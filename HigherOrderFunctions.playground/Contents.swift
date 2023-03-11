@@ -3,18 +3,19 @@ import UIKit
 struct Team {
     let name: String
     let color: String
-    let fans: Int
+    let fans: Int // Billion
+    let budget: Int // Billion Euro
 }
 
 let allTeams =  [
-                    Team(name: "Chelsea",       color: "Blue",   fans: 1538394),
-                    Team(name: "Fenerbahce",    color: "Yellow", fans: 173494),
-                    Team(name: "Manchester U.", color: "Red",    fans: 1231494),
-                    Team(name: "Real Madrid",   color: "White",  fans: 1838494),
-                    Team(name: "Galatasaray",   color: "Red",    fans: 193494),
-                    Team(name: "Barcelona",     color: "Claret", fans: 1332494),
-                    Team(name: "Roma",          color: "Orange", fans: 123594),
-                    Team(name: "Dortmund",      color: "Yellow", fans: 111944)
+                    Team(name: "Chelsea",       color: "Blue",   fans: 60,  budget: 120),
+                    Team(name: "Fenerbahce",    color: "Yellow", fans: 45,  budget: 43),
+                    Team(name: "Manchester U.", color: "Red",    fans: 64,  budget: 200),
+                    Team(name: "Real Madrid",   color: "White",  fans: 102, budget: 384),
+                    Team(name: "Galatasaray",   color: "Red",    fans: 43,  budget: 84),
+                    Team(name: "Barcelona",     color: "Claret", fans: 109, budget: 192),
+                    Team(name: "Roma",          color: "Orange", fans: 56,  budget: 85),
+                    Team(name: "Dortmund",      color: "Yellow", fans: 42,  budget: 78)
                 ]
 
 // MARK: - FILTER
@@ -49,6 +50,11 @@ Team(name: "Barcelona", color: "Claret", fans: 1332494)
  
 */
 
+// MARK: - MAP
+
+let updatedBudget = allTeams.map({$0.budget + 15})
+print(updatedBudget)
+// Output-> [135, 58, 215, 399, 99, 207, 100, 93]
 
 
 
