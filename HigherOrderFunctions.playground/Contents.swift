@@ -78,3 +78,12 @@ var usersName: [String?] = ["John", "Alice", "Verica", nil, "Bory", nil]
 var allUsers = usersName.compactMap({ $0 })
 print(allUsers)
 // Ouput: ["John", "Alice", "Verica", "Bory"]
+
+
+// MARK: - FLAT MAP
+
+var arrayInTheArray = [[10,20],[30,40],[50,60]]
+
+var oneArray = arrayInTheArray.flatMap({ $0.map({ $0 + 10 }) })
+print(oneArray)
+// Ouput: [20, 30, 40, 50, 60, 70]
