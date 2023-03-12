@@ -72,3 +72,9 @@ let allBudget = allTeams.reduce(0, {$0 + $1.budget})
 print(allBudget)
 
 
+// MARK: - COMPACT MAP
+
+var usersName: [String?] = ["John", "Alice", "Verica", nil, "Bory", nil]
+var allUsers = usersName.compactMap({ $0 })
+print(allUsers)
+// Ouput: ["John", "Alice", "Verica", "Bory"]
