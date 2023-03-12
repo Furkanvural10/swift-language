@@ -56,5 +56,19 @@ let updatedBudget = allTeams.map({$0.budget + 15})
 print(updatedBudget)
 // Output-> [135, 58, 215, 399, 99, 207, 100, 93]
 
+// MARK: - REDUCE
+
+let allPoints = [10,20,30,40]
+let sumAllPoints = allPoints.reduce(0, +)
+// + sign means that sum all of them in the allPoints
+print(sumAllPoints)
+
+
+let addTenAllPoints = allPoints.reduce(10, +)
+// Sum all the points and add 10
+print(addTenAllPoints)
+
+let allBudget = allTeams.reduce(0, {$0 + $1.budget})
+print(allBudget)
 
 
