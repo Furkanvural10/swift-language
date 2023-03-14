@@ -87,3 +87,10 @@ var arrayInTheArray = [[10,20],[30,40],[50,60]]
 var oneArray = arrayInTheArray.flatMap({ $0.map({ $0 + 10 }) })
 print(oneArray)
 // Ouput: [20, 30, 40, 50, 60, 70]
+
+// MARK: - CHAINING
+var arrayInTheArray2 = [10,20,30,40,50,60]
+
+let chainingExample = arrayInTheArray2.map({ $0 * 10 }).reduce(0, +)
+print(chainingExample)
+
