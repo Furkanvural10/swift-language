@@ -50,13 +50,35 @@ let allNumbers = Set([1,2,3,1,2,54,7,3,1,2,3,4])
 print(allNumbers)
 // Output: [3, 4, 7, 1, 2, 54] because no item twice appears like a 1 2 3
 
+let orderNumber = Set([1,2,3,4,5,6,7,8,9,10, 11])
+let oddNumber = Set([1,3,5,7,9])
+let continueNumber = Set([12, 13, 14, 15])
+
+let intersectionResult = orderNumber.intersection(oddNumber).sorted()
+print(intersectionResult)
+// [1, 3, 5, 7, 9]
+
+let symmetricDifferenceResult = orderNumber.symmetricDifference(oddNumber).sorted()
+print(symmetricDifferenceResult)
+// [2, 4, 6, 8, 10]
+
+let unionResult = orderNumber.union(continueNumber).sorted()
+print(unionResult)
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+let subtractingResult = orderNumber.subtracting(oddNumber).sorted()
+print(subtractingResult)
+// [2, 4, 6, 8, 10, 11]
+
+
+
 // MARK: - Creating Empty Set
 
 let uniqueNumberList = Set<Int>()
 let uniqueColorList: Set<String> = []
 
 
-// MARK: - SET
+// MARK: - Tuples
 
 /*
     1- Store several values together in a single value.
