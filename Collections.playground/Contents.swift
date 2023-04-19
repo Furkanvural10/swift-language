@@ -160,3 +160,10 @@ var startWithBLetter = classNote.filter({$0.key.starts(with: "B") })
 
 var moreConditionList = classNote.filter({$0.key.starts(with: "B") && $0.value>50 })
 // ["Billy": 65]
+
+
+// MARK: - ARRAY REDUCE FUNCTION
+
+var teamPointsArray = [45, 65, 62, 56, 94, 86, 43, 56, 24]
+var sumTeamsPoints = teamPointsArray.reduce(0, {$0 + $1})
+print(sumTeamsPoints)
