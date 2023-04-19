@@ -4,7 +4,7 @@ import UIKit
 
 /*
  If you want to use multiple comment line you must use (/* your comment */)
- Comments-line helps us to understading and reading easily code
+ Comments-line helps us to understanding and reading easily code
  */
 
 
@@ -19,10 +19,14 @@ var userSurname = "Burry"
 let piNumber = 3.14
 let userID = "osdkf92if92jkfds01md9"
 
-// ** Important note: The difference between Variable and Constant is that variable's value can be changed later, but constan can not. Example below
+// ** Important note: The difference between Variable and Constant is that variable's value can be changed later, but constant can not. Example below
 
-userName = "Eric" // Previously userName equalts to "Joe"
-userSurname = "Keept" // Previously userSurname equalts to "Burry"
+userName = "Eric" // Previously userName equals to "Joe"
+userSurname = "Keept" // Previously userSurname equals to "Burry"
+
+// You can define multiple related variables of the same type on a single line
+var numberOne = 1, numberTwo = 2, numberThree = 3, numberFour = 4
+
 
 /*
  
@@ -50,7 +54,16 @@ let negativeDoubleNumber = -123.5
 var isUserActive = true
 var isColorPurple = false
  
- 
+// Type Annotations
+var numberOfStudents: Int = 100 // ": Int" this expression means that numberOfStudents variable's type must be Integer(Int)
 
+// Single Line multiple variable with type annotations
+var isLogin, isLogout, isTapped, isFemale: Bool
+
+// Type-safety in Swift
+
+var greaterThanPoints = 100
+// -> greaterThanPoints = "200" It is error compile time because variable define as a Int and value can be change, but we don't change type, only value. Like below
+greaterThanPoints = 101
 
 
