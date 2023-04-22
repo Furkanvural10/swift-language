@@ -1,6 +1,8 @@
 import UIKit
 
-/* ************* OPTIONALS ***********
+// MARK: - OPTIONALS
+
+/*
  
  Defining something and initializing it are two different things.
  
@@ -22,10 +24,9 @@ import UIKit
      ******* The correct one is below *******
  */
 
-/* Question Mark
+// MARK: - Question Mark
  
- if ı put the question mark (?), maybe it has a value, maybe not, if it exists, give the value, otherwise, give us nil value.
-*/
+// if ı put the question mark (?), maybe it has a value, maybe not, if it exists, give the value, otherwise, give us nil value.
 
 var userName: String?
 userName?.uppercased() // output: nill
@@ -34,7 +35,7 @@ userName?.uppercased() // output: nill
 /* Exclamation mark
  
  Putting a question mark means I'm 100 percent sure, this variable has a value,
- **If the variable has no value, the program will throw an error. BE CAREFUL!!
+ --- * If the variable has no value, the program will throw an error. BE CAREFUL!!
 */
 
 var userSurname: String?
@@ -56,7 +57,7 @@ var userAge1 = (Int(age) ?? 0) * 10 // output: 10x0 = 0
 // Default value: 10
 
 
-// If-let
+// MARK: -  If-let
 var bestBook: String?
 
 // The "if let" is one of the best ways to check if a variable has a value or not.
@@ -69,25 +70,17 @@ if let bookName = bestBook {
 }
 
 
-/* ********* Guard Let *********
+// MARK: - Guard Let
+// We can think of it as the opposite of if let. We deal with "Guard" mostly in negative situations.
  
- We can think of it as the opposite of if let. We deal with "Guard" mostly in negative situations.
- 
-*/
-
 var userEmail = "xyz@gmail.com"
 
-func getUserInfo(userEmail: String?){
+func getUserInfo(userEmail: String?) {
     
-    guard let mail = userEmail else {
-        // If the variable is nil this will work.
-        print("userEmail is nil, nothing happen")
-        return
-    }
-    
-    // Unwapping because userEmail is not nil.
+    guard let mail = userEmail else { return}
+    // userEmail is nil, nothing happen
+    // Unwrap because userEmail is not nil.
     print("Welcome: \(mail)")
-    
 }
 
 getUserInfo(userEmail: nil)
