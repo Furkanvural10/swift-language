@@ -1,13 +1,12 @@
 import UIKit
 
-/* ************* CLASSES *************
- 
+// MARK: - CLASSES
+/*
  Classes can contain variables, functions, etc. a structure that holds them all together.
  We actually build everything around classes.
  It is one of the most important concepts of OOP (Object Oriented Programming)
  
  we use "class" keyword. Class name must start with a capital letter.
- 
  */
 
 class Cars {
@@ -18,15 +17,12 @@ class Cars {
     var modelName: String = "C63-Amg"
     
     // Class has functions
-    
     func buyCard(){
         // Check the user's bank account information.
     }
-    
     func addConfiguration() {
         // Add leather seats, park assist.
     }
-    
 }
 
 // We can create objects from classes.
@@ -41,13 +37,10 @@ myCar.modelName = "5.20i"
 myCar.buyCard()
 myCar.addConfiguration()
 
-
-
-// ******* Initialization *******
+// MARK: - Initialization *******
 
 class Teams {
-    
-    
+
     var teamName: String = "Real Madrid"
     var playerName: String = "Kross"
     var jerseyNumber: Int = 8
@@ -57,9 +50,7 @@ class Teams {
         // It is called a special function where we specify what to do when the class is created.
         // When an object of this class is created, it will run first.
         print("An object has been created from the Teams class.")
-        
     }
-    
 }
 
 var team1 = Teams()
@@ -90,16 +81,14 @@ class Books {
     }
 }
 
-
 var book1 = Books(name: "100 Days", price: 12, writer: "Joe Luret", completed: false)
 
-
-// Class with enum feature
+// MARK: - Class with enum feature
 
 enum Platform {
     case instagram
     case twitter
-    case linkedin
+    case linkedIn
     case youtube
 }
 
