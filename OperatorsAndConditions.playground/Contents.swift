@@ -1,10 +1,10 @@
 import UIKit
 
-/*                                  *********** Operators **************
+// MARK: - Operators
  
+/*
  Operators are like a math. Addiction(+), Subtraction(-), Multiplication(*), Division(/),
  and also has some operators like bang(!), grater than(>), grater than or equal to(>=), less than(<), less than or equal to(<=), "and" operator(&&), "or" operator(||), equals(==), not assignment operator(=). Be careful.
- 
  */
 
 let number1 = 80
@@ -15,39 +15,39 @@ let subtractionResult = number1 - number2
 let multiplicationResult = number1 * number2
 let divisionResult = number1 / number2
 
-// Modulus Operators
+// MARK: - Modulus Operators
 // This is how you can find out if a number is even or odd. If the remainder is zero, we can say that the number is odd, not even.
 let modulusResult = number1 % number2 // Output: 35
 
 
-// Equals Operators (==)
+// MARK: - Equals Operators (==)
 let number3 = 39
 let number4 = 50
 number3 == number4
 // If number3 equals to number4 return the true, else return false. Usually we use the equals operators with if/else statements.
 
 
-// Bigger than or Equals Operators (>=)
+// MARK: - Bigger than or Equals Operators (>=)
 let number5 = 12
 let number6 = 10
 number5 >= number6 // Return true because number5 is bigger than number6.
 
-// Less than or Equals Operators (<=)
+// MARK: - Less than or Equals Operators (<=)
 let number7 = 13
 let number8 = 12
 number7 <= number8 // Return false because number7 bigger than number8.
 
-// Bigger than (>)
+// MARK: - Bigger than (>)
 let number9 = 19
 let number10 = 20
 number10 > number9 // Return true
 
-// Less than (<)
+// MARK: - Less than (<)
 let number11 = 21
 let number12 = 20
 number11 < number12 // Return false
 
-// Bang Operators or Exclamation Point (!)
+// MARK: - Bang Operators or Exclamation Point (!)
 let number13 = 45
 let number14 = 78
 number13 != number14
@@ -85,9 +85,8 @@ value1 || value3
 value3 || value4
 // It will return false because there is no true statement next to the "or operator(||)".
 
-
-/*              *********** Conditions **************
-
+// MARK: - Conditions
+/*
  If this happen do that or do this. BASIC LOGIC.
  If users logins do that, else do that
 
@@ -135,18 +134,17 @@ if studentGrade < 60 {
     print("AA")
 }
 
-
-/*                 ****** The ternary operator ********
- If we want to make the if condition appear shorter, we can use it.
-*/
+// MARK: - The Ternary Operator
+// If we want to make the if condition appear shorter, we can use it.
 
 let productPrice = 100 // $
 let myAccount = 120 // $
 
-let message = myAccount>productPrice   ?    "You can buy :)"    :     "You can not buy :("
-//              (your condition)      (if)  (condition true)  (else)  (if condition false)
+let message = myAccount > productPrice   ?   "You can buy :)"    :     "You can not buy :("
+//              (your condition)        (if)  (condition true)  (else)  (if condition false)
 
-print(message) // output: You can buy :)
+print(message)
+// output: You can buy :)
 
 
 
