@@ -1,13 +1,12 @@
 import UIKit
 
 
-/*                          ************* LOOPS **************
+// MARK: - LOOPS
  
- A loop allows us to perform an action in return for a certain condition.
- 
-*/
+// A loop allows us to perform an action in return for a certain condition.
 
-// While Loops
+
+// MARK: -  While Loops
 
 var number = 0
 
@@ -28,10 +27,10 @@ while isUserActive {
     isUserActive = false
 }
 
-/* For Loop
+// MARK: - For Loop
  
- Most of the time we use for loop to access values inside arrays. It takes the values in the array one by one and gives them to us.
-*/
+ //Most of the time we use for loop to access values inside arrays. It takes the values in the array one by one and gives them to us.
+
 
 let myNumber: [Int] = [1,2,3,4,5,6,7,8,9,10]
 
@@ -40,11 +39,10 @@ for value in myNumber {
 //  output: Value: 1, Value: 2, ... Value:10
 }
 
-/* For Loop with Range
- 
+// MARK: - For Loop with Range
+/*
  1..<10 --> Returns numbers from 1 to 10. (10 not included)
  10...100 --> Returns numbers from 10 to 100. (100 included)
- 
 */
 
 for number in 1...10 {
@@ -52,7 +50,8 @@ for number in 1...10 {
 // It will print the numbers from 1 to 10 one by one.
 }
 
-// Tricks/Tips -- If you want to generate random number, you can use.
+// MARK: - Tricks/Tips
+// If you want to generate random number, you can use.
 var randomNumber = Int.random(in: 1...100) // Returns a random number between 1 and 100.
 
 
@@ -66,7 +65,7 @@ for i in colors {
     }
 }
 
-// Skipping Item - "continue"
+// MARK: - Skipping Item - "continue"
 
 for i in 1...5 {
     
