@@ -1,11 +1,10 @@
 import UIKit
 
-/* **************  Enumerations  **************
- 
+// MARK: - Enumeration
+/*
  - Usually called "enum"
  - Enums are a way of defining groups of related values in a way that makes them easier to use.
  - We use "enum" with key-word.
- 
 */
 
 enum Result {
@@ -13,19 +12,19 @@ enum Result {
     case success
 }
 
-func getUserData(name: String, age:Int) -> Result {
+func getUserData(name: String, age: Int) -> Result {
     // The function return Result case depends on condition
     
-    if name.count > 2 && age > 20 {
+    if (name.count > 2) && (age > 20) {
         return Result.success
         // If condition is true, return success from "Result" enum.
-    }else{
+    }else {
         return Result.failure
         // If condition is false, return failure from "Result" enum.
     }
 }
 
-// Enum Associated Values
+// MARK: - Enum Associated Values
 
 enum Book {
     case classics // you don't have to have associated values for every single cases enum
@@ -39,14 +38,15 @@ let book2 = Book.horror(pages: 743)
 let book3 = Book.mirror(writers: "Leo Huer")
 let book4 = Book.crime(price: 45.3) // $
 
-// Intermediate Example!!
+// MARK: - Intermediate Example
+
 enum Activity {
     case ps5(gameName: String)
     case running(place: String)
     case reading(bookPage: Int)
 }
 
-func doActivity(activity: Activity){
+func doActivity(activity: Activity) {
     
     switch activity {
         
@@ -72,11 +72,11 @@ doActivity(activity: .ps5(gameName: "God of War")) // Output: Nice activity
 
 
 
-/* Enum Raw Value
- - We can assign values to enums.
-*/
+// MARK: -  Enum Raw Value
+// - We can assign values to enums.
 
 //Swift will automatically assign each of those a number starting from 0.
+
 enum Language: Int {
     case English // 0
     case Spanish // 1
@@ -84,7 +84,7 @@ enum Language: Int {
     case Arabic // 3
 }
 
-let language = Language(rawValue: 2) // asign raw value 2 --> Turkish
+let language = Language(rawValue: 2) // assign raw value 2 --> Turkish
 
 // If you want, you can assign one or more cases a specific value
 
@@ -98,7 +98,7 @@ enum Team: Int {
 let leaderTeam = Team(rawValue: 1)
 let secondTeam = Team(rawValue: 2)
 
-if let leaderTeam = Team(rawValue: 1){
+if let leaderTeam = Team(rawValue: 1) {
     print(leaderTeam) // output: barcelona
 }
 
@@ -114,7 +114,7 @@ enum SocialMedia {
 }
 
 
-func sharePhoto(on platfrom: SocialMedia){
+func sharePhoto(on platfrom: SocialMedia) {
     switch platfrom {
     case .twitter:
         print("Share photo on twitter")
