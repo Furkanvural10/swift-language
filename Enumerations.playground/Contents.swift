@@ -178,6 +178,26 @@ case .mercedes:
 
 }
 
+// MARK: - Switch using in Enum
+
+enum UserRole {
+    case admin
+    case user
+    case restricted(String)
+    
+    var isBanned: Bool {
+        switch self {
+        case .restricted(let reason) where reason == "Banned":
+            return true
+        default:
+            return false
+        }
+    }
+}
+
+let user1 = UserRole.restricted("Banned")
+user1.isBanned
+
 
 
 
