@@ -4,6 +4,7 @@ import UIKit
 // MARK: - Array
 // Arrays are collections of values that are stored as a single value
 // This is a array. It positions count from 0
+// Subscript syntax --> []
 
 
 let userList = ["John", "Melisa", "Sean"]

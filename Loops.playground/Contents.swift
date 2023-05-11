@@ -39,6 +39,11 @@ for value in myNumber {
 //  output: Value: 1, Value: 2, ... Value:10
 }
 
+// Different Loops in Array
+myNumber.forEach { value in
+    print(value)
+}
+
 // MARK: - For Loop with Range
 /*
  1..<10 --> Returns numbers from 1 to 10. (10 not included)
