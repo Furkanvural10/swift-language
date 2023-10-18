@@ -113,3 +113,43 @@ do {
 } catch {
     print(error.localizedDescription)
 }
+
+// MARK: - Json Include Array Object
+
+let snake_case_json3 = """
+[
+    {
+        "first_name": "Furkan",
+        "last_name": "Vural",
+    },
+    {
+        "first_name": "Furkan",
+        "last_name": "Vural",
+    },
+    {
+        "first_name": "Furkan",
+        "last_name": "Vural",
+    }
+]
+
+""".data(using: .utf8)!
+
+struct Person5: Decodable {
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "first_name"
+        case surname = "last_name"
+ 
+    }
+    
+    let name: String
+    let surname: String
+ 
+}
+
+do {
+    let person = try JSONDecoder().decode([Person5].self, from: snake_case_json3)
+    print(person)
+} catch {
+    print(error.localizedDescription)
+}
