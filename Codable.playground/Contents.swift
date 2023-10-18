@@ -37,3 +37,22 @@ do {
 } catch {
     print(error.localizedDescription)
 }
+
+// MARK: - Decode with decodingSt
+
+let snake_case_json = """
+    {
+        "first_name": "Furkan",
+        "last_name": "Vural",
+    }
+""".data(using: .utf8)!
+
+let jsonDecoder = JSONDecoder()
+jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
+do {
+    let person = try jsonDecoder.decode(Person2.self, from: snake_case_json)
+    print(person)
+} catch {
+    print(error.localizedDescription)
+}
