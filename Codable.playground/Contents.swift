@@ -178,3 +178,56 @@ do {
 } catch {
     print(error.localizedDescription)
 }
+
+// MARK: - Custom Decoding
+
+let snake_case_json5 = """
+    {
+        "name": "Furkan",
+        "surname": "Vural",
+        "address": {
+            "city": "Istanbul",
+            "country": "Turkey"
+        }
+    }
+""".data(using: .utf8)!
+
+
+struct Person7: Decodable {
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case surname
+        case address
+    }
+    
+    enum AddressCodingKeys: String, CodingKey {
+        case city
+        case country
+    }
+    
+    let name: String
+    let surname: String
+    let address: String
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.surname = try container.decode(String.self, forKey: .surname)
+        
+        let addressContainer = try container.nestedContainer(keyedBy: AddressCodingKeys.self, forKey: CodingKeys.address)
+        
+        let city = try addressContainer.decode(String.self, forKey: .city)
+        let country = try addressContainer.decode(String.self, forKey: .country)
+        
+        self.address = "\(city) \(country)"
+    }
+ 
+}
+
+do {
+    let person = try JSONDecoder().decode(Person7.self, from: snake_case_json4)
+    print(person)
+} catch {
+    print(error.localizedDescription)
+}
