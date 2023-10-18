@@ -57,7 +57,7 @@ do {
     print(error.localizedDescription)
 }
 
-// MARK: - Custom Decoding (CodingKeys)
+// MARK: - (CodingKeys)
 
 let snake_case_json2 = """
     {
@@ -82,6 +82,33 @@ struct Person3: Decodable {
 
 do {
     let person = try JSONDecoder().decode(Person3.self, from: snake_case_json2)
+    print(person)
+} catch {
+    print(error.localizedDescription)
+}
+
+// MARK: - Date Decoding Strategy
+
+struct Person4: Decodable {
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "first_name"
+        case surname = "last_name"
+        case birthDate = "birth_of_date"
+    }
+    
+    let name: String
+    let surname: String
+    let birthDate: Date
+}
+
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd.MM.yyyy"
+let jsonDecoder2 = JSONDecoder()
+jsonDecoder2.dateDecodingStrategy = .formatted(dateFormatter)
+
+do {
+    let person = try jsonDecoder2.decode(Person4.self, from: snake_case_json2)
     print(person)
 } catch {
     print(error.localizedDescription)
