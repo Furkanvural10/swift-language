@@ -119,36 +119,61 @@ do {
 let snake_case_json3 = """
 [
     {
-        "first_name": "Furkan",
-        "last_name": "Vural",
+        "name": "Furkan",
+        "surname": "Vural"
     },
     {
-        "first_name": "Furkan",
-        "last_name": "Vural",
+        "name": "Mehmet",
+        "surname": "Kale"
     },
     {
-        "first_name": "Furkan",
-        "last_name": "Vural",
-    }
+        "name": "Osman",
+        "surname": "Öğe"
+    },
 ]
-
 """.data(using: .utf8)!
 
 struct Person5: Decodable {
-    
-    enum CodingKeys: String, CodingKey {
-        case name = "first_name"
-        case surname = "last_name"
- 
-    }
-    
     let name: String
     let surname: String
- 
 }
 
 do {
     let person = try JSONDecoder().decode([Person5].self, from: snake_case_json3)
+    print(person)
+} catch {
+    print(error.localizedDescription)
+}
+
+
+// MARK: - JSON includes Nested Object
+
+let snake_case_json4 = """
+    {
+        "name": "Furkan",
+        "surname": "Vural",
+        "address": {
+            "city": "Istanbul",
+            "country": "Turkey"
+        }
+    }
+""".data(using: .utf8)!
+
+struct Address: Decodable {
+    let city: String
+    let country: String
+}
+
+struct Person6: Decodable {
+    
+    let name: String
+    let surname: String
+    let address: Address
+ 
+}
+
+do {
+    let person = try JSONDecoder().decode(Person6.self, from: snake_case_json4)
     print(person)
 } catch {
     print(error.localizedDescription)
